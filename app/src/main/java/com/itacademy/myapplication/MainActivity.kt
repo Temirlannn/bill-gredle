@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.recyclerview.widget.RecyclerView
 import com.itacademy.myapplication.adapters.ProductAdapter
+import com.itacademy.myapplication.model.Cart
 import com.itacademy.myapplication.model.Product
 
 class MainActivity : AppCompatActivity() {

@@ -13,7 +13,6 @@ import com.itacademy.myapplication.R
 import com.itacademy.myapplication.model.Product
 
 class ProductAdapter (private val array: ArrayList<Product>) : RecyclerView.Adapter<ProductAdapter.ViewHolder>() {
-
     class ViewHolder(view: View) :RecyclerView.ViewHolder(view) {
         val productName: TextView = view.findViewById(R.id.textView)
         val image: ImageView = view.findViewById(R.id.imageView2)
@@ -21,13 +20,11 @@ class ProductAdapter (private val array: ArrayList<Product>) : RecyclerView.Adap
         val amount: TextView = view.findViewById(R.id.amount)
 
     }
-
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.item_product_cell, parent,false)
 
         return ViewHolder(view)
     }
-
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val item = array[position]
         holder.productName.text = item.name
@@ -40,7 +37,6 @@ class ProductAdapter (private val array: ArrayList<Product>) : RecyclerView.Adap
             holder.itemView.context.startActivity(intent)
         }
     }
-
     override fun getItemCount(): Int {
         return array.size
 

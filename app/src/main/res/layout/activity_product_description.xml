@@ -34,8 +34,7 @@
                 android:id="@+id/descripstion"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Вишня – род древесных растений
-                семейства розоцветных. Плод вишни – сочная костянка с круглой косточкой, кисло-сладкого вкуса. Ягоды ароматные, различные по размеру. Род вишни насчитывает около 130 видов. В зависимости от сорта ягоды вишни бывают от розового до почти черного цвета."
+                android:text=""
                 android:textSize="20sp"
                 android:textStyle="bold" />
 
