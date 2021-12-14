@@ -1,4 +1,4 @@
-package com.itacademy.myapplication.adapters
+package com.itacademy.myapplication.model
 
 import android.content.Intent
 import android.view.LayoutInflater
@@ -10,7 +10,6 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.itacademy.myapplication.ProductDescriptionActivity
 import com.itacademy.myapplication.R
-import com.itacademy.myapplication.model.Product
 
 class ProductAdapter (private val array: ArrayList<Product>) : RecyclerView.Adapter<ProductAdapter.ViewHolder>() {
     class ViewHolder(view: View) :RecyclerView.ViewHolder(view) {
@@ -28,12 +27,13 @@ class ProductAdapter (private val array: ArrayList<Product>) : RecyclerView.Adap
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val item = array[position]
         holder.productName.text = item.name
-        Glide.with(holder.itemView).load(item.image).into(holder.image)
+        Glide.with(holder.itemView).load(item.image).placeholder(R.drawable.ic_launcher_background).into(holder.image)
         holder.amount.text = item.amount.toString()
         holder.price.text = item.price.toString()
 
         holder.itemView.setOnClickListener {
             val intent = Intent(holder.itemView.context, ProductDescriptionActivity::class.java)
+            intent.putExtra("product", item)
             holder.itemView.context.startActivity(intent)
         }
     }

@@ -1,4 +1,6 @@
-package com.itacademy.myapplication.model
+package com.itacademy.myapplication.adapters
+
+import com.itacademy.myapplication.model.Product
 
 ///модель корзин
 data class Cart(
