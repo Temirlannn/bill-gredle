@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.util.Log
 import android.widget.Button
 import android.widget.ImageView
+
 import android.widget.TextView
 import com.bumptech.glide.Glide
 import com.itacademy.myapplication.adapters.Cart
@@ -45,7 +46,6 @@ class ProductDescriptionActivity : AppCompatActivity() {
             addProduct(product)
             Log.d("Cart", "addedProducts: ${Cart.addedProducts.size}")
         }
-
         minus.setOnClickListener {
             if (counter <= 0) return@setOnClickListener
             counter --
@@ -56,10 +56,9 @@ class ProductDescriptionActivity : AppCompatActivity() {
         plus.setOnClickListener {
             counter ++
             button.text = "Добавить в корзину (${counter})"
-
         }
     }
-    fun addProduct(product: Product) {
+    private fun addProduct(product: Product) {
         if (Cart.addedProducts.isEmpty()) {
             Cart.addedProducts.add(product)
         } else {
@@ -69,8 +68,8 @@ class ProductDescriptionActivity : AppCompatActivity() {
                     Log.d("Cart", "Такой продукт уже есть")
                     break
                 } else{
+                    Cart.addedProducts.add(product)
                     //Добавить продукт
-                    Cart.addedProduct.add(product)
                 }
             }
         }

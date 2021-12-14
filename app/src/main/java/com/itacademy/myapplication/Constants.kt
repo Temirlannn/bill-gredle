@@ -4,6 +4,6 @@ import com.itacademy.myapplication.adapters.Cart
 
 class Constants {
     companion object{
-        var cart =  ArrayList<Cart>()
+        var addedProducts =  ArrayList<Cart>()
     }
 }
